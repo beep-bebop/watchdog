@@ -44,11 +44,13 @@
 		margin-left: 700px;
 	}
 	#Table{
-		margin-top: 100px;
+		float: left;
+		margin-top: 40px;
 		margin-left: 80px;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
 	}
 	#VideoCard{
+		float: left;
 		width: 105%;
 		margin-top: -109px;
 		margin-left: 820px;
