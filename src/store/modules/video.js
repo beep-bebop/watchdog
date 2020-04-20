@@ -1,9 +1,10 @@
 
 const state = {
-  dataValue: null,
-  timeValue: null,
-  tableValue: [],
-  pictureValue: null
+    dataValue: null,
+  	timeValue: null,
+  	tableValue: [],
+  	pictureValue: null,
+	realVideoTimer: null
 }
 
 const mutations = {
@@ -18,6 +19,9 @@ const mutations = {
 	},
 	setPictureValue(state, PictureValue){
 		state.pictureValue = PictureValue;
+	},
+	setRealVideoTimer(state, RealVideoTimer){
+		state.realVideoTimer = RealVideoTimer;
 	}
 }
 

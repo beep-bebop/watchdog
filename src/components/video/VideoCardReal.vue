@@ -3,7 +3,11 @@
 		<el-row>
 		  <el-col :span="8" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2 : 0">
 		    <el-card :body-style="{ padding: '0px' }">
-		      <img src="http://47.95.11.87/api/video" class="image" id="randimg">
+				<el-image src="http://47.95.11.87/api/video" class="image" id="randimg">
+					<div slot="error" class="image-slot">
+						<img src="../../assets/logo.png"></img>
+					</div>
+				</el-image>
 		      <div style="padding: 14px;">
 		        <span>实时视频</span>
 		        <div class="bottom clearfix">
@@ -37,11 +41,14 @@
 	  	})
 	  },
 	  beforeDestroy: function(){
-	    clearInterval(this.timer);
+	    window.clearInterval(this.timer);
 	  	this.timer = null;
 	  },
 	}
 </script>
 
 <style>
+	.image {
+		width: 120%;
+	}
 </style>

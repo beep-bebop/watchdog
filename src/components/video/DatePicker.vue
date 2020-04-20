@@ -64,7 +64,7 @@
 				var recordminute = store.state.video.timeValue;
 				console.log(recorddate);
 				console.log(recordminute);
-				if(store.state.video.timeValue != null){
+				if(recordminute != null){
 					this.$axios
 					.post('http://47.95.11.87/api/videosavedata',{
 							recorddate: recorddate,
@@ -88,6 +88,8 @@
 						console.log(mid);
 						store.commit('video/setTableValue',mid);
 						console.log(store.state.video.tableValue);
+						store.commit('video/setDataValue',null);
+						store.commit('video/setTimeValue',null);
 					}
 				}
 			}

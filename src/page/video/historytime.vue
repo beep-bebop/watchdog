@@ -7,8 +7,9 @@
 		<hr style="background-color: snow; border:none;">
 		<div id="TableDiv">
 			<Table id="Table"></Table>
-			<VideoCard id="VideoCard"></VideoCard>
+
 		</div>
+		<VideoCard id="VideoCard"></VideoCard>
 	</div>
 </template>
 
@@ -44,19 +45,22 @@
 		margin-left: 700px;
 	}
 	#Table{
-		float: left;
+
 		margin-top: 40px;
 		margin-left: 80px;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
 	}
 	#VideoCard{
-		float: left;
-		width: 105%;
-		margin-top: -109px;
-		margin-left: 820px;
+		position: fixed;
+		width: 95%;
+		margin-top: 67px;
+		margin-left: 795px;
 	}
 	#TableDiv{
-		margin-top: -20px;
+		width: 100%;
+		float: left;
+		margin-top: -10px;
 		margin-left: -40px;
 	}
+
 </style>

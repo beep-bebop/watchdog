@@ -25,7 +25,7 @@
 		},
 		data() {
 		  return {
-		    activeName: 'first'
+		    activeName: "first"
 		  };
 		},
 		mounted() {
@@ -44,11 +44,15 @@
 		  },
 		  updateType() {
 		        let type = this.$route.path;
-		  		if(type == '/video/realetime'){
-					this.activeName ='first'
+			  	console.log(type);
+		  		if(type === '/video/realtime'){
+					this.activeName = "first";
+				}
+				else if(type === '/video/historytime'){
+					this.activeName = "second";
 				}
 				else{
-					this.activeName =  'second'
+					this.$router.push('/video/realtime');
 				}
 		        //通过拿到的值不同，更改activeName的值
 		        console.log(type);
