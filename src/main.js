@@ -6,11 +6,13 @@ import axios from 'axios'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Vuex from 'vuex'
+import { Button } from 'vant'
 
 Vue.use(Vuex)
 Vue.prototype.$axios = axios
 Vue.use(VueRouter)
 Vue.use(ElementUI)
+Vue.use(Button)
 
 Vue.config.productionTip = false
 

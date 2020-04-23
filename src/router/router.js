@@ -1,6 +1,8 @@
 import App from '../App'
 
-const main = r => require.ensure([], () => r(require('../page/main')), 'main')
+const login = r => require.ensure([], () => r(require('../page/LoginReg/Login')), 'login')
+const register = r => require.ensure([], () => r(require('../page/LoginReg/Register')), 'login')
+const main = r => require.ensure([], () => r(require('../page/main')), 'login')
 const video = r => require.ensure([], () => r(require('../page/video/video')), 'video')
 const temhui = r => require.ensure([], () => r(require('../page/temhui')), 'temhui')
 const realtime = r => require.ensure([], () => r(require('../page/video/realtime')), 'video')
@@ -13,7 +15,17 @@ export default [{
 		//地址为空时跳转页面
 		{
 		    path: '',
-		    redirect: '/main'
+		    redirect: '/login'
+		},
+		//登陆页面
+		{
+			path: '/login',
+			component: login
+		},
+		//注册界面
+		{
+			path:'/register',
+			component: register
 		},
 		{
 		    path: '/main',
