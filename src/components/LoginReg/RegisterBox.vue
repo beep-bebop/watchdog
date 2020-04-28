@@ -92,7 +92,7 @@ export default {
             },
             rules: {
 			  username: [
-			    { required: true, message: '请输入活动名称', trigger: 'blur' },
+			    { required: true, message: '请输入用户名', trigger: 'blur' },
 			    // { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
 			  ],
               password: [
@@ -121,25 +121,32 @@ export default {
         },
         methods: {
 		  checkName() {
-			  this.errorMsg1 = ""; //校验前需清空错误信息
-			  var checkUser = this.ruleForm.username;
-			  console.log("用户名检测：" + checkUser);
+		     this.errorMsg1 = ""; //校验前需清空错误信息
+		     var checkUser = this.ruleForm.username;
+			 console.log("用户名检测：" + checkUser);
 
-			  let params = new URLSearchParams();
-			  params.append('username',checkUser);
-			  axios.post('http://47.95.11.87/api/register',params)
-					  .then((res)=>{
-						  if(res.data==-1){
-							  this.errorMsg1 = "用户名已注册！";
+			 let params = new URLSearchParams();
+			 params.append('username',checkUser);
+			 axios.post('http://47.95.11.87/api/register',params)
+		  		.then((res)=>{
+		  			if(res.data==-1){
+		  			    this.errorMsg1 = "用户名已注册！";
+		  				console.log("用户校验res", res);					
+		  			}
+		  		})
+		  		.catch(function (error) {
+		  			console.log(error);
+		  		});
 
-						  }
-					  })
 		  },
           submitForm(formName) {
             this.$refs[formName].validate((valid) => {
               if (valid) {
-				alert('注册成功！');
-				axios.post('http://127.0.0.1/api/register',
+				this.$message({
+				    message: '恭喜你，注册成功！',
+				    type: 'success'
+				});
+				axios.post('http://47.95.11.87/api/register',
 				 qs.stringify({
 					 username: this.ruleForm.username,
 					 phonenum: this.ruleForm.phonenum,
@@ -153,6 +160,7 @@ export default {
 				      ).catch(res => {
 				        console.log(res)
 				      })
+				this.$router.replace('/login')	  
               } else {
                 console.log('注册失败！');
                 return false;
@@ -164,7 +172,7 @@ export default {
           //   this.$refs[formName].resetFields();
           // }
 		  back(){
-		  	this.$router.push('/login')
+		  	this.$router.replace('/login')
 		  }
         }
   }

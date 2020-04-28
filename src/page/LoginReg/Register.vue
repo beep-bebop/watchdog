@@ -18,7 +18,7 @@ export default{
 	data() {
 	    return {
 	        bgImg: {
-	            backgroundImage: "url(" + require("../../assets/images/login.jpg") + ")",
+	            //backgroundImage: "url(" + require("../../assets/images/login1.jpg") + ")",
 	            backgroundRepeat: "no-repeat",
 	            backgroundSize: "1500px auto"
 	        }
