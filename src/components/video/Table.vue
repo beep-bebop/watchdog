@@ -33,6 +33,7 @@
 
 <script>
 	import store from '../../store/index.js'
+	import {getCookie} from '../../cookie.js'
 
 	export default {
 	    methods: {
@@ -49,13 +50,15 @@
 				console.log(val.date);
 				var date = val.date;
 				var time = val.time;
-				console.log(time);
+				var username = getCookie('username');
+				console.log(username);
 				this.$axios({
 					method: 'post',
 					url: 'http://47.95.11.87/api/videorecord',
 					data: {
 						picturedate: date,
-						time: time
+						time: time,
+						username: username
 					},
 					responseType: 'blob'
 				})

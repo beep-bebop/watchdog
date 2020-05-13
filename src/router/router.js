@@ -4,9 +4,11 @@ const login = r => require.ensure([], () => r(require('../page/LoginReg/Login'))
 const register = r => require.ensure([], () => r(require('../page/LoginReg/Register')), 'login')
 const main = r => require.ensure([], () => r(require('../page/main')), 'login')
 const video = r => require.ensure([], () => r(require('../page/video/video')), 'video')
-const temhui = r => require.ensure([], () => r(require('../page/temhui')), 'temhui')
+const temhuireal = r => require.ensure([], () => r(require('../page/temhui/temhuireal')), 'temhui')
+const temhuiHis = r => require.ensure([], () => r(require('../page/temhui/temhuiHis')), 'temhui')
 const realtime = r => require.ensure([], () => r(require('../page/video/realtime')), 'video')
 const historytime = r => require.ensure([], () => r(require('../page/video/historytime')), 'video')
+const personal = r => require.ensure([], () => r(require('../page/Personal/personalInfo')), 'personal')
 
 export default [{
 	path: '/',
@@ -54,10 +56,22 @@ export default [{
 			]
 		},
 		{
-		    path: '/temhui',
-		    component: temhui,
-			name: 'temhui',
-			meta: {title: '温湿度'}
+		    path: '/temhuireal',
+		    component: temhuireal,
+			name: 'temhuireal',
+			meta: {title: '当前温湿度'}
+		},
+		{
+			path: '/temhuiHis',
+			component: temhuiHis,
+			name: 'temhuiHis',
+			meta: {title: '历史温湿度'}
+		},
+		{
+			path: '/personal',
+			component: personal,
+			name: 'personal',
+			meta: {title: '个人信息'}
 		},
 	],
 }]

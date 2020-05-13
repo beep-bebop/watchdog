@@ -2,6 +2,7 @@
 	<div>
 		<NavMenu></NavMenu>
 		<Breadcrumb id="Breadcrumb"></Breadcrumb>
+		<Avatar id="Avatar"></Avatar>
 		<el-divider id="divider1"></el-divider>
 			<el-tabs v-model="activeName" type="border-card" @tab-click="handleClick" id="tabs">
 			    <el-tab-pane label="实时视频" name="first" id="real">
@@ -17,11 +18,13 @@
 <script>
 	import NavMenu from '../../components/NavMenu.vue'
 	import Breadcrumb from '../../components/Breadcrumb.vue'
+	import Avatar from "../../components/Avatar";
 	
 	export default{
 		components: {
-		  NavMenu,
-		  Breadcrumb,
+		  	NavMenu,
+		  	Breadcrumb,
+			Avatar
 		},
 		data() {
 		  return {
@@ -64,7 +67,7 @@
 <style>
 	#divider1{
 		width: 86%;
-		margin-top: 23px;
+		margin-top: 11px;
 		margin-left: 244px;
 	}
 	#Breadcrumb{
@@ -81,5 +84,9 @@
 	}
 	#real{
 		height: 560px;
+	}
+	#Avatar {
+		margin-left: 93%;
+		margin-top: -27px;
 	}
 </style>

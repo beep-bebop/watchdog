@@ -19,6 +19,7 @@
 
 <script>
 	import store from '../../store/index.js'
+	import {getCookie} from '../../cookie.js'
 	
 	export default {
 	    data() {
@@ -62,13 +63,16 @@
 				
 				var recorddate = store.state.video.dataValue;
 				var recordminute = store.state.video.timeValue;
+				var username = getCookie('username');
+				console.log(username);
 				console.log(recorddate);
 				console.log(recordminute);
 				if(recordminute != null){
 					this.$axios
 					.post('http://47.95.11.87/api/videosavedata',{
 							recorddate: recorddate,
-							recordminute: recordminute
+							recordminute: recordminute,
+							username: username
 					})
 					.then(response=> (this.info = response))
 					.catch(function (error) { // 请求失败处理
